@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>测试 on 学礼以立</title>
-    <link>https://bh4fku.github.io/categories/%E6%B5%8B%E8%AF%95/</link>
+    <link>https://blog.xxyws.top/categories/%E6%B5%8B%E8%AF%95/</link>
     <description>Recent content in 测试 on 学礼以立</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
     <copyright>【署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0)】</copyright>
-    <lastBuildDate>Tue, 10 May 2022 19:33:45 +0800</lastBuildDate><atom:link href="https://bh4fku.github.io/categories/%E6%B5%8B%E8%AF%95/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 10 May 2022 19:33:45 +0800</lastBuildDate><atom:link href="https://blog.xxyws.top/categories/%E6%B5%8B%E8%AF%95/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>你好世界</title>
-      <link>https://bh4fku.github.io/posts/helloworld/</link>
+      <link>https://blog.xxyws.top/posts/helloworld/</link>
       <pubDate>Tue, 10 May 2022 19:33:45 +0800</pubDate>
       
-      <guid>https://bh4fku.github.io/posts/helloworld/</guid>
+      <guid>https://blog.xxyws.top/posts/helloworld/</guid>
       <description>hello world 你好世界</description>
     </item>
     
