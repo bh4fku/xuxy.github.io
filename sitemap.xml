@@ -2,25 +2,28 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://blog.xxyws.top/posts/mgfa/</loc>
+    <lastmod>2022-08-28T20:15:49+08:00</lastmod>
+  </url><url>
     <loc>https://blog.xxyws.top/categories/all/</loc>
-    <lastmod>2022-08-25T07:03:49+08:00</lastmod>
+    <lastmod>2022-08-28T20:15:49+08:00</lastmod>
   </url><url>
     <loc>https://blog.xxyws.top/categories/</loc>
-    <lastmod>2022-08-25T07:03:49+08:00</lastmod>
+    <lastmod>2022-08-28T20:15:49+08:00</lastmod>
   </url><url>
     <loc>https://blog.xxyws.top/posts/</loc>
-    <lastmod>2022-08-25T07:03:49+08:00</lastmod>
+    <lastmod>2022-08-28T20:15:49+08:00</lastmod>
   </url><url>
     <loc>https://blog.xxyws.top/tags/</loc>
-    <lastmod>2022-08-25T07:03:49+08:00</lastmod>
-  </url><url>
-    <loc>https://blog.xxyws.top/posts/peiluoxi/</loc>
-    <lastmod>2022-08-25T07:03:49+08:00</lastmod>
+    <lastmod>2022-08-28T20:15:49+08:00</lastmod>
   </url><url>
     <loc>https://blog.xxyws.top/</loc>
-    <lastmod>2022-08-25T07:03:49+08:00</lastmod>
+    <lastmod>2022-08-28T20:15:49+08:00</lastmod>
   </url><url>
     <loc>https://blog.xxyws.top/tags/%E6%84%8F%E8%AF%86%E5%BD%A2%E6%80%81/</loc>
+    <lastmod>2022-08-28T20:15:49+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.xxyws.top/posts/peiluoxi/</loc>
     <lastmod>2022-08-25T07:03:49+08:00</lastmod>
   </url><url>
     <loc>https://blog.xxyws.top/posts/lhxj/</loc>
