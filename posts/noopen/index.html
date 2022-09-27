@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html><head>
+<title>NOPEN远控木马分析报告</title>
+
+
+
+
+<meta charset="utf-8">
+<meta name="X-UA-Compatible" content="IE=edge">
+<meta name="google-site-verification" content="">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+<meta content="telephone=no" name="format-detection">
+<meta name="description" content="">
+<meta name="renderer" content="webkit">
+<meta name="theme-color" content="#ffffff">
+
+
+
+
+
+
+
+
+
+
+
+<link type="text/css" rel="stylesheet" href="/vendor/css/bootstrap.min.css">
+
+
+  
+
+
+
+
+
+
+<link rel="stylesheet" href="https://blog.xxyws.top/scss/journal.min.81015892badc777c10c9a3b9aa4efc72e082c190d6f7c0870c6f77f40479044f.css" integrity="sha256-gQFYkrrcd3wQyaO5qk78cuCCwZDW98CHDG939AR5BE8=" media="screen">
+
+
+
+<link rel="stylesheet" href="https://blog.xxyws.top/scss/dark-mode.min.89f91159a02fd1b53995c02e91f17276456e37ccc95a0c328f9d965dde8d4d46.css" integrity="sha256-ifkRWaAv0bU5lcAukfFydkVuN8zJWgwyj52WXd6NTUY=" media="screen">
+
+
+<script src="/vendor/js/loadCSS.js"></script>
+<script>
+  loadCSS("https://fonts.googleapis.com/css?family=Fira+Mono|Material+Icons");
+</script>
+
+
+
+
+
+
+  <script src="/js/toc.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+<body>
+    	<div id="app"><div id="sideContainer" class="side-container">
+    
+    <a class="a-block nav-head false" href="https://blog.xxyws.top/">
+    
+        <div class="nav-title">
+            学礼以立
+        </div>
+        
+    </a>
+
+    <div class="nav-link-list">
+        
+        
+            
+            
+            
+                
+            
+            
+            
+            <a class="a-block nav-link-item active" href="/posts">
+                天府
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/tags">
+                诨名
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/categories">
+                纲目
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/index.xml">
+                订阅
+            </a>
+            
+        
+    </div>
+
+    
+
+    <div class="nav-footer">
+        
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://risehere.net/">Rise</a>
+<br>
+Ported from <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	【署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0)】
+	
+
+    </div>
+    
+</div><div id="extraContainer" class="extra-container">
+    
+    
+    <div class="toc animated-visibility" :class="{ invisible: scrollY <= 140 }">
+
+
+</div>
+    
+    <div class="pagination">
+        <a id="globalBackToTop" class="pagination-action animated-visibility" href="#top" :class="{ invisible: scrollY == 0 }">
+            <i class="material-icons pagination-action-icon">
+                keyboard_arrow_up
+            </i>
+        </a>
+        
+        <a type="button" class="pagination-action" id="darkModeToggleButton">
+            <span class="material-icons pagination-action-icon" id="darkModeToggleIcon">
+                dark_mode
+            </span>
+        </a>
+        
+        
+    </div>
+</div>
+<div class="single-column-drawer-container" id="drawer"
+     v-bind:class="{ 'single-column-drawer-container-active': isDrawerOpen }">
+    <div class="drawer-content">
+        <div class="drawer-menu">
+            
+            
+            
+                
+                
+                
+                    
+                
+                
+                
+                <a class="a-block drawer-menu-item active" href="/posts">
+                    天府
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/tags">
+                    诨名
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/categories">
+                    纲目
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/index.xml">
+                    订阅
+                </a>
+                
+            
+            
+            <div class="toc">
+
+
+</div>
+            
+        </div>
+    </div>
+</div>
+<transition name="fade">
+    <div id="drawer-mask" v-bind:class="{ 'single-column-drawer-mask': mounted }" v-if="isDrawerOpen" v-on:click="toggleDrawer"></div>
+</transition>
+<nav id="navBar" class="navbar sticky-top navbar-light single-column-nav-container">
+    <div id="navBackground" class="nav-background"></div>
+    <div class="container container-narrow nav-content">
+        <button id="nav_dropdown_btn" class="nav-dropdown-toggle" type="button" v-on:click="toggleDrawer">
+            <i class="material-icons">
+                menu
+            </i>
+        </button>
+        <a id="navTitle" class="navbar-brand" href="https://blog.xxyws.top/">
+            学礼以立
+        </a>
+        
+        <button type="button" class="nav-darkmode-toggle" id="darkModeToggleButton2">
+            <i class="material-icons" id="darkModeToggleIcon2">
+                dark_mode
+            </i>
+        </button>
+        
+    </div>
+</nav>
+<div class="single-column-header-container" id="pageHead"
+     v-bind:style="{ transform: 'translateZ(0px) translateY('+.3*scrollY+'px)', opacity: 1-navOpacity }">
+    <a href="https://blog.xxyws.top/">
+        <div class="single-column-header-title">学礼以立</div>
+        
+
+    </a>
+</div>
+
+            <div id="content">
+                <div id="streamContainer" class="stream-container">
+
+    <div class="post-list-container post-list-container-shadow">
+        <div class="post">
+            
+            
+            
+
+            <div class="post-head-wrapper-text-only"
+                
+            >
+                <div class="post-title">
+                    NOPEN远控木马分析报告
+                    
+                    <div class="post-meta">
+                        
+                        <time itemprop="datePublished">
+                            2022-09-27 17:00
+                        </time>
+                        
+
+                        
+                            <i class="material-icons" style="">folder</i>
+                                <a href="/categories/all">All</a>
+                                &nbsp;
+                        
+
+                        
+                            <i class="material-icons" style="">label</i>
+                            
+                                <a href="/tags/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8">网络安全</a>
+                                &nbsp;
+                            
+                        
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="post-body-wrapper">
+                
+                <div class="post-body" v-pre>
+                
+                    <p>转自 CVERC</p>
+<p>近日，国家计算机病毒应急处理中心对名为“NOPEN”的木马工具进行了攻击场景复现和技术分析。该木马工具针对Unix/Linux平台，可实现对目标的远程控制。根据“影子经纪人”泄露的NSA内部文件，该木马工具为美国国家安全局开发的网络武器。“NOPEN”木马工具是一款功能强大的综合型木马工具，也是美国国家安全局接入技术行动处（TAO）对外攻击窃密所使用的主战网络武器之一。</p>
+<p>一、基本情况</p>
+<p>“NOPEN”木马工具为针对Unix/Linux系统的远程控制工具，主要用于文件窃取、系统提权、网络通信重定向以及查看目标设备信息等，是TAO远程控制受害单位内部网络节点的主要工具。通过技术分析，我单位认为，“NOPEN”木马工具编码技术复杂、功能全面、隐蔽性强、适配多种处理器架构和操作系统，并且采用了插件式结构，可以与其他网络武器或攻击工具进行交互和协作，是典型的用于网络间谍活动的武器工具。</p>
+<p>二、具体功能</p>
+<p>“NOPEN”木马工具包含客户端“noclient”和服务端“noserver”两部分，客户端会采取发送激活包的方式与服务端建立连接，使用RSA算法进行秘钥协商，使用RC6算法加密通信流量。</p>
+<p>该木马工具设计复杂，支持功能众多，主要包括以下功能：内网端口扫描、端口复用、建立隧道、文件处理（上传、下载、删除、重命名、计算校验值）、目录遍历、邮件获取、环境变量设置、进程获取、自毁消痕等。</p>
+<p>三、技术分析</p>
+<p>经技术分析与研判，该木马工具针对Unix/Linux平台，可在主控端和受控端之间建立隐蔽加密信道，攻击者可通过向目标发送远程指令，实现远程获取目标主机环境信息、上传/下载/创建/修改/删除文件、远程执行命令、网络流量代理转发、内网扫描、窃取电子邮件信息、自毁等恶意功能。该木马工具包含主控端（Client）和受控端（Server）两个部分，具体分析结果如下：</p>
+<p>（一）主控端功能分析</p>
+<p>文件名：Noclient</p>
+<p>MD5：188974cea8f1f4bb75e53d490954c569</p>
+<p>SHA-1：a84ac3ea04f28ff1a2027ee0097f69511af0ed9d</p>
+<p>SHA-256：ed2c2d475977c78de800857d3dddc739</p>
+<p>57d219f9bb09a9e8390435c0b6da21ac</p>
+<p>文件大小：241.2KB（241192 字节）</p>
+<p>文件类型：ELF32</p>
+<p>文件最后修改时间：2011-12-8 19:07:48</p>
+<p>支持处理器架构：i386, i486, i586, i686, sparc, alpha, x86_64, amd64</p>
+<p>支持操作系统：FreeBSD、SunOS、HP-UX、Solaris、Linux</p>
+<p>主控端的主要功能是连接受控端和向受控端发送指令并接收受控端回传的信息：</p>
+<p>1、连接目标受控端</p>
+<p>主控端通过以下命令行连接目标受控端：</p>
+<p>noclient [参数1：目标主机IP地址]:[端口号（默认为32754）]</p>
+<p>连接成功后会组合采用RC6+RSA加密算法，在主控端与受控端之间建立加密信道。并回显主控端与被控端基本信息，包括：IP地址和端口号、软件版本、当前工作目录、进程号（PID）、操作系统版本和内核版本、日期时间等。同时主控端建立监听端口（默认为1025），接受受控端的反向连接。</p>
+<p>2、命令控制</p>
+<p>主控端与被控端成功建立连接后，攻击者可通过主控端控制台向受控端发送指令，该木马工具提供的指令非常丰富。开发者还给出了详细的指令帮助说明。</p>
+<p>其中远程控制指令如下所示：</p>
+<p>-elevate：提升权限</p>
+<p>-getenv：获取环境变量</p>
+<p>-gs：未知</p>
+<p>-setenv：设置环境变量</p>
+<p>-shell：返回命令行接口</p>
+<p>-status：查看当前连接状态、本地与远程主机环境信息</p>
+<p>-time：查看本地与远程主机的日期、时间和时区信息</p>
+<p>-burn：终止控制并关闭远程进程</p>
+<p>-call ip port：设置回连IP地址和端口号</p>
+<p>-listen port：设置监听端口号</p>
+<p>-pid：查看远程受控端进程ID</p>
+<p>-icmptimetarget_ip [source_ip]：远程Ping目标地址，查看时延</p>
+<p>-ifconfig：查看远程主机的IP地址设置和MAC地址</p>
+<p>-nslookup：远程对指定域名进行解析</p>
+<p>-ping：远程Ping目标地址，用于内网探测</p>
+<p>-trace：远程traceroute</p>
+<p>-fixudp port：指定UDP传输端口</p>
+<p>另外，还有一些隐藏指令并没有被在控制台帮助中列出，如“-hammy”、“-trigger”、“-triggerold”和“-sniff”等。经研判可能是与其他网络武器或攻击工具之间的功能调用接口。</p>
+<p>（二）受控端功能分析</p>
+<p>文件名：noserver_linux</p>
+<p>MD5：9081d61fabeb9919e4e3fa84227999db</p>
+<p>SHA-1：0274bd33c2785d4e497b6ba49f5485caa52a0855</p>
+<p>SHA-256：4acc94c6be340fb8ef4133912843aa0e</p>
+<p>4ece01d8d371209a01ccd824f519a9ca</p>
+<p>文件大小：357KB（356996 字节）</p>
+<p>文件类型：ELF32</p>
+<p>文件最后修改时间：2011-12-8 19:07:48</p>
+<p>受控端被加载运行后会默认监听32754端口。</p>
+<p>受控端程序为了干扰和对抗分析，进行了去符号操作，结合代码功能，分析受控端程序的主要功能如下所示：</p>
+<p>1.KillProc、kill：终止指定进程</p>
+<p>2.Chmod：为指定对象赋权限</p>
+<p>3.GetCWD：获得当前工作目录</p>
+<p>4.GetPid：获得当前进程ID</p>
+<p>5.DeleteFile_Dir：删除指定文件或目录</p>
+<p>6.GetFileMD5：获得指定文件MD5摘要</p>
+<p>7.GetPCInfo：获得所在主机环境信息</p>
+<p>8.Recv：上传、下载数据</p>
+<p>9.Connect：建立socket连接</p>
+<p>受控端根据主控端指令组合调用相应模块执实现相关恶意操作。</p>
+<p>四、使用环境</p>
+<p>“NOPEN”木马工具支持在Linux、FreeBSD、SunOS、Solaris、JUNOS和HP-UX等各类操作系统上运行，同时兼容i386、i486、i586、i686、i86pc、i86、SPARC、Alpha、x86_64、PPC、MIPS、ARM以及AMD64等多种体系架构，适用范围较广。根据监控情况，该木马工具主要用于在受害单位内网中执行各类攻击指令，结合其他取情、嗅探工具，级联窃取核心数据。</p>
+<p>五、植入方式</p>
+<p>“NOPEN”木马工具支持多种植入运行方式，包括手动植入、工具植入、自动化植入等，其中最常见的植入方式是结合远程漏洞攻击自动化植入至目标系统中，以便规避各种安全防护机制。此外，TAO还研发了一款名为Packrat的工具，可用于辅助植入“NOPEN”木马工具，其主要功能为对“NOPEN”木马工具进行压缩、编码、上传和启动。</p>
+<p>六、使用控制方式</p>
+<p>“NOPEN”木马工具主要包括8个功能模块，每个模块支持多个命令操作，TAO主要使用该武器对受害机构网络内部的核心业务服务器和关键网络设备实施持久化控制。其主要使用方式为：攻击者首先向安装有“NOPEN”木马工具的网内主机或设备发送特殊定制的激活包，“NOPEN”木马工具被激活后回连至控制端，加密连接建立后，控制端发送各类指令操作“NOPEN”木马工具实施网内渗透、数据窃取、其他武器上传等后续攻击窃密行为。</p>
+
+                    
+                    <HR width="100%" id="EOF">
+		    <p style="color:#777;">Last modified on 2022-09-27</p>
+                    
+                </div>
+            </div>
+            
+            
+            <nav class="post-pagination">
+
+                
+                <a class="newer-posts">
+			Next<br>No newer posts.
+                </a>
+                
+                
+                
+                <a class="older-posts" href="https://blog.xxyws.top/posts/fengchao/">
+			Previous<br>美国中央情报局（CIA）“蜂巢”恶意代码攻击控制武器平台分析报告——关于美国中情局主战网络武器的预警
+                </a>
+                
+            </nav>
+            <div class="post-comment-wrapper">
+                
+
+
+
+
+
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+
+
+                    </div>
+            </div><div id="single-column-footer">
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://risehere.net/">Rise</a>
+<br>
+Ported from <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	【署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0)】
+	
+</div>
+            </div>
+    
+    <script src="/js/journal.js"></script>
+    </body>
+</html>
