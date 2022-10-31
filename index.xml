@@ -7,9 +7,40 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
     <copyright>【署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0)】</copyright>
-    <lastBuildDate>Sun, 30 Oct 2022 17:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 31 Oct 2022 08:00:00 +0800</lastBuildDate>
     
         <atom:link href="https://blog.xxyws.top/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+        <item>
+        <title>供销社</title>
+        <link>https://blog.xxyws.top/posts/20221031gxs/</link>
+        <pubDate>Mon, 31 Oct 2022 08:00:00 +0800</pubDate>
+        
+        <guid>https://blog.xxyws.top/posts/20221031gxs/</guid>
+        <description>学礼以立 https://blog.xxyws.top/posts/20221031gxs/ -&lt;p&gt;看了下中华全国供销合作总社决算公开，摘抄如下。有些很有意思的点。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;不是只有中国有供销合作社， 国际上也有， 叫【 国际合作社联盟 International Cooperative  Alliance】。  国际合作社联盟（英文简称ICA），1895年成立于英国伦敦，是一个独立的非政府性的国际组织，它的目标是团结、服务和代表世界各地的合作社以及合作社运动。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;供销社主要两块支出是 ：【 商业服务业】等支出 141766.01 万元，主要用于供销合作总社本级人员经费、机构运行和“新网工程”专项资金支出。【 粮油物资储备】支出 13,059.56 万元，主要用于供销合作社承担国家化肥、农药和边销茶储备任务的利息补贴等支出。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;新网工程 ，全称 -  新农村现代流通服务网络工程”（简称“新网工程”）。“新网工程”旨在大力发展农业生产资料现代经营服务网络、农副产品市场购销网络、日用消费品现代经营网络和再生资源回收利用网络。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;农村的经济形态以集体经济为主， 所以农村的公，是指集体。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;nc.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;5&#34;&gt;
+&lt;li&gt;新领导班子去延安不仅是为了弘扬革命精神， 同时在关注三农。 新领导班子不进去了延安，还去了安阳。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;附录  &lt;a href=&#34;https://image.chinacoop.gov.cn/data/1/images/2022/0826/16615023610691790.pdf?spm=zm1158-001.0.0.1.H2G8Mf&amp;amp;file=16615023610691790.pdf&#34;&gt;https://image.chinacoop.gov.cn/data/1/images/2022/0826/16615023610691790.pdf?spm=zm1158-001.0.0.1.H2G8Mf&amp;amp;file=16615023610691790.pdf&lt;/a&gt;&lt;/p&gt;
+- https://blog.xxyws.top/posts/20221031gxs/ - 【署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0)】</description>
+        </item>
     
     
     
@@ -1221,90 +1252,6 @@
         <guid>https://blog.xxyws.top/posts/peiluoxiline/</guid>
         <description>学礼以立 https://blog.xxyws.top/posts/peiluoxiline/ -&lt;p&gt;&lt;img src=&#34;peiluoxiline.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 - https://blog.xxyws.top/posts/peiluoxiline/ - 【署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0)】</description>
-        </item>
-    
-    
-    
-        <item>
-        <title>NOPEN远控木马分析报告</title>
-        <link>https://blog.xxyws.top/posts/noopen/</link>
-        <pubDate>Tue, 27 Sep 2022 17:00:00 +0800</pubDate>
-        
-        <guid>https://blog.xxyws.top/posts/noopen/</guid>
-        <description>学礼以立 https://blog.xxyws.top/posts/noopen/ -&lt;p&gt;转自 CVERC&lt;/p&gt;
-&lt;p&gt;近日，国家计算机病毒应急处理中心对名为“NOPEN”的木马工具进行了攻击场景复现和技术分析。该木马工具针对Unix/Linux平台，可实现对目标的远程控制。根据“影子经纪人”泄露的NSA内部文件，该木马工具为美国国家安全局开发的网络武器。“NOPEN”木马工具是一款功能强大的综合型木马工具，也是美国国家安全局接入技术行动处（TAO）对外攻击窃密所使用的主战网络武器之一。&lt;/p&gt;
-&lt;p&gt;一、基本情况&lt;/p&gt;
-&lt;p&gt;“NOPEN”木马工具为针对Unix/Linux系统的远程控制工具，主要用于文件窃取、系统提权、网络通信重定向以及查看目标设备信息等，是TAO远程控制受害单位内部网络节点的主要工具。通过技术分析，我单位认为，“NOPEN”木马工具编码技术复杂、功能全面、隐蔽性强、适配多种处理器架构和操作系统，并且采用了插件式结构，可以与其他网络武器或攻击工具进行交互和协作，是典型的用于网络间谍活动的武器工具。&lt;/p&gt;
-&lt;p&gt;二、具体功能&lt;/p&gt;
-&lt;p&gt;“NOPEN”木马工具包含客户端“noclient”和服务端“noserver”两部分，客户端会采取发送激活包的方式与服务端建立连接，使用RSA算法进行秘钥协商，使用RC6算法加密通信流量。&lt;/p&gt;
-&lt;p&gt;该木马工具设计复杂，支持功能众多，主要包括以下功能：内网端口扫描、端口复用、建立隧道、文件处理（上传、下载、删除、重命名、计算校验值）、目录遍历、邮件获取、环境变量设置、进程获取、自毁消痕等。&lt;/p&gt;
-&lt;p&gt;三、技术分析&lt;/p&gt;
-&lt;p&gt;经技术分析与研判，该木马工具针对Unix/Linux平台，可在主控端和受控端之间建立隐蔽加密信道，攻击者可通过向目标发送远程指令，实现远程获取目标主机环境信息、上传/下载/创建/修改/删除文件、远程执行命令、网络流量代理转发、内网扫描、窃取电子邮件信息、自毁等恶意功能。该木马工具包含主控端（Client）和受控端（Server）两个部分，具体分析结果如下：&lt;/p&gt;
-&lt;p&gt;（一）主控端功能分析&lt;/p&gt;
-&lt;p&gt;文件名：Noclient&lt;/p&gt;
-&lt;p&gt;MD5：188974cea8f1f4bb75e53d490954c569&lt;/p&gt;
-&lt;p&gt;SHA-1：a84ac3ea04f28ff1a2027ee0097f69511af0ed9d&lt;/p&gt;
-&lt;p&gt;SHA-256：ed2c2d475977c78de800857d3dddc739&lt;/p&gt;
-&lt;p&gt;57d219f9bb09a9e8390435c0b6da21ac&lt;/p&gt;
-&lt;p&gt;文件大小：241.2KB（241192 字节）&lt;/p&gt;
-&lt;p&gt;文件类型：ELF32&lt;/p&gt;
-&lt;p&gt;文件最后修改时间：2011-12-8 19:07:48&lt;/p&gt;
-&lt;p&gt;支持处理器架构：i386, i486, i586, i686, sparc, alpha, x86_64, amd64&lt;/p&gt;
-&lt;p&gt;支持操作系统：FreeBSD、SunOS、HP-UX、Solaris、Linux&lt;/p&gt;
-&lt;p&gt;主控端的主要功能是连接受控端和向受控端发送指令并接收受控端回传的信息：&lt;/p&gt;
-&lt;p&gt;1、连接目标受控端&lt;/p&gt;
-&lt;p&gt;主控端通过以下命令行连接目标受控端：&lt;/p&gt;
-&lt;p&gt;noclient [参数1：目标主机IP地址]:[端口号（默认为32754）]&lt;/p&gt;
-&lt;p&gt;连接成功后会组合采用RC6+RSA加密算法，在主控端与受控端之间建立加密信道。并回显主控端与被控端基本信息，包括：IP地址和端口号、软件版本、当前工作目录、进程号（PID）、操作系统版本和内核版本、日期时间等。同时主控端建立监听端口（默认为1025），接受受控端的反向连接。&lt;/p&gt;
-&lt;p&gt;2、命令控制&lt;/p&gt;
-&lt;p&gt;主控端与被控端成功建立连接后，攻击者可通过主控端控制台向受控端发送指令，该木马工具提供的指令非常丰富。开发者还给出了详细的指令帮助说明。&lt;/p&gt;
-&lt;p&gt;其中远程控制指令如下所示：&lt;/p&gt;
-&lt;p&gt;-elevate：提升权限&lt;/p&gt;
-&lt;p&gt;-getenv：获取环境变量&lt;/p&gt;
-&lt;p&gt;-gs：未知&lt;/p&gt;
-&lt;p&gt;-setenv：设置环境变量&lt;/p&gt;
-&lt;p&gt;-shell：返回命令行接口&lt;/p&gt;
-&lt;p&gt;-status：查看当前连接状态、本地与远程主机环境信息&lt;/p&gt;
-&lt;p&gt;-time：查看本地与远程主机的日期、时间和时区信息&lt;/p&gt;
-&lt;p&gt;-burn：终止控制并关闭远程进程&lt;/p&gt;
-&lt;p&gt;-call ip port：设置回连IP地址和端口号&lt;/p&gt;
-&lt;p&gt;-listen port：设置监听端口号&lt;/p&gt;
-&lt;p&gt;-pid：查看远程受控端进程ID&lt;/p&gt;
-&lt;p&gt;-icmptimetarget_ip [source_ip]：远程Ping目标地址，查看时延&lt;/p&gt;
-&lt;p&gt;-ifconfig：查看远程主机的IP地址设置和MAC地址&lt;/p&gt;
-&lt;p&gt;-nslookup：远程对指定域名进行解析&lt;/p&gt;
-&lt;p&gt;-ping：远程Ping目标地址，用于内网探测&lt;/p&gt;
-&lt;p&gt;-trace：远程traceroute&lt;/p&gt;
-&lt;p&gt;-fixudp port：指定UDP传输端口&lt;/p&gt;
-&lt;p&gt;另外，还有一些隐藏指令并没有被在控制台帮助中列出，如“-hammy”、“-trigger”、“-triggerold”和“-sniff”等。经研判可能是与其他网络武器或攻击工具之间的功能调用接口。&lt;/p&gt;
-&lt;p&gt;（二）受控端功能分析&lt;/p&gt;
-&lt;p&gt;文件名：noserver_linux&lt;/p&gt;
-&lt;p&gt;MD5：9081d61fabeb9919e4e3fa84227999db&lt;/p&gt;
-&lt;p&gt;SHA-1：0274bd33c2785d4e497b6ba49f5485caa52a0855&lt;/p&gt;
-&lt;p&gt;SHA-256：4acc94c6be340fb8ef4133912843aa0e&lt;/p&gt;
-&lt;p&gt;4ece01d8d371209a01ccd824f519a9ca&lt;/p&gt;
-&lt;p&gt;文件大小：357KB（356996 字节）&lt;/p&gt;
-&lt;p&gt;文件类型：ELF32&lt;/p&gt;
-&lt;p&gt;文件最后修改时间：2011-12-8 19:07:48&lt;/p&gt;
-&lt;p&gt;受控端被加载运行后会默认监听32754端口。&lt;/p&gt;
-&lt;p&gt;受控端程序为了干扰和对抗分析，进行了去符号操作，结合代码功能，分析受控端程序的主要功能如下所示：&lt;/p&gt;
-&lt;p&gt;1.KillProc、kill：终止指定进程&lt;/p&gt;
-&lt;p&gt;2.Chmod：为指定对象赋权限&lt;/p&gt;
-&lt;p&gt;3.GetCWD：获得当前工作目录&lt;/p&gt;
-&lt;p&gt;4.GetPid：获得当前进程ID&lt;/p&gt;
-&lt;p&gt;5.DeleteFile_Dir：删除指定文件或目录&lt;/p&gt;
-&lt;p&gt;6.GetFileMD5：获得指定文件MD5摘要&lt;/p&gt;
-&lt;p&gt;7.GetPCInfo：获得所在主机环境信息&lt;/p&gt;
-&lt;p&gt;8.Recv：上传、下载数据&lt;/p&gt;
-&lt;p&gt;9.Connect：建立socket连接&lt;/p&gt;
-&lt;p&gt;受控端根据主控端指令组合调用相应模块执实现相关恶意操作。&lt;/p&gt;
-&lt;p&gt;四、使用环境&lt;/p&gt;
-&lt;p&gt;“NOPEN”木马工具支持在Linux、FreeBSD、SunOS、Solaris、JUNOS和HP-UX等各类操作系统上运行，同时兼容i386、i486、i586、i686、i86pc、i86、SPARC、Alpha、x86_64、PPC、MIPS、ARM以及AMD64等多种体系架构，适用范围较广。根据监控情况，该木马工具主要用于在受害单位内网中执行各类攻击指令，结合其他取情、嗅探工具，级联窃取核心数据。&lt;/p&gt;
-&lt;p&gt;五、植入方式&lt;/p&gt;
-&lt;p&gt;“NOPEN”木马工具支持多种植入运行方式，包括手动植入、工具植入、自动化植入等，其中最常见的植入方式是结合远程漏洞攻击自动化植入至目标系统中，以便规避各种安全防护机制。此外，TAO还研发了一款名为Packrat的工具，可用于辅助植入“NOPEN”木马工具，其主要功能为对“NOPEN”木马工具进行压缩、编码、上传和启动。&lt;/p&gt;
-&lt;p&gt;六、使用控制方式&lt;/p&gt;
-&lt;p&gt;“NOPEN”木马工具主要包括8个功能模块，每个模块支持多个命令操作，TAO主要使用该武器对受害机构网络内部的核心业务服务器和关键网络设备实施持久化控制。其主要使用方式为：攻击者首先向安装有“NOPEN”木马工具的网内主机或设备发送特殊定制的激活包，“NOPEN”木马工具被激活后回连至控制端，加密连接建立后，控制端发送各类指令操作“NOPEN”木马工具实施网内渗透、数据窃取、其他武器上传等后续攻击窃密行为。&lt;/p&gt;
-- https://blog.xxyws.top/posts/noopen/ - 【署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0)】</description>
         </item>
     
     
