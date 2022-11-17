@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html><head>
+<title>下调高血压临界值</title>
+
+
+
+
+<meta charset="utf-8">
+<meta name="X-UA-Compatible" content="IE=edge">
+<meta name="google-site-verification" content="">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+<meta content="telephone=no" name="format-detection">
+<meta name="description" content="">
+<meta name="renderer" content="webkit">
+<meta name="theme-color" content="#ffffff">
+
+
+
+
+
+
+
+
+
+
+
+<link type="text/css" rel="stylesheet" href="/vendor/css/bootstrap.min.css">
+
+
+  
+
+
+
+
+
+
+<link rel="stylesheet" href="https://blog.xxyws.top/scss/journal.min.81015892badc777c10c9a3b9aa4efc72e082c190d6f7c0870c6f77f40479044f.css" integrity="sha256-gQFYkrrcd3wQyaO5qk78cuCCwZDW98CHDG939AR5BE8=" media="screen">
+
+
+
+<link rel="stylesheet" href="https://blog.xxyws.top/scss/dark-mode.min.89f91159a02fd1b53995c02e91f17276456e37ccc95a0c328f9d965dde8d4d46.css" integrity="sha256-ifkRWaAv0bU5lcAukfFydkVuN8zJWgwyj52WXd6NTUY=" media="screen">
+
+
+<script src="/vendor/js/loadCSS.js"></script>
+<script>
+  loadCSS("https://fonts.googleapis.com/css?family=Fira+Mono|Material+Icons");
+</script>
+
+
+
+
+
+
+  <script src="/js/toc.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+<body>
+    	<div id="app"><div id="sideContainer" class="side-container">
+    
+    <a class="a-block nav-head false" href="https://blog.xxyws.top/">
+    
+        <div class="nav-title">
+            学礼以立
+        </div>
+        
+    </a>
+
+    <div class="nav-link-list">
+        
+        
+            
+            
+            
+                
+            
+            
+            
+            <a class="a-block nav-link-item active" href="/posts">
+                天府
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/tags">
+                诨名
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/categories">
+                纲目
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/index.xml">
+                订阅
+            </a>
+            
+        
+    </div>
+
+    
+
+    <div class="nav-footer">
+        
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://risehere.net/">Rise</a>
+<br>
+Ported from <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	【署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0)】
+	
+
+    </div>
+    
+</div><div id="extraContainer" class="extra-container">
+    
+    
+    <div class="toc animated-visibility" :class="{ invisible: scrollY <= 140 }">
+
+
+</div>
+    
+    <div class="pagination">
+        <a id="globalBackToTop" class="pagination-action animated-visibility" href="#top" :class="{ invisible: scrollY == 0 }">
+            <i class="material-icons pagination-action-icon">
+                keyboard_arrow_up
+            </i>
+        </a>
+        
+        <a type="button" class="pagination-action" id="darkModeToggleButton">
+            <span class="material-icons pagination-action-icon" id="darkModeToggleIcon">
+                dark_mode
+            </span>
+        </a>
+        
+        
+    </div>
+</div>
+<div class="single-column-drawer-container" id="drawer"
+     v-bind:class="{ 'single-column-drawer-container-active': isDrawerOpen }">
+    <div class="drawer-content">
+        <div class="drawer-menu">
+            
+            
+            
+                
+                
+                
+                    
+                
+                
+                
+                <a class="a-block drawer-menu-item active" href="/posts">
+                    天府
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/tags">
+                    诨名
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/categories">
+                    纲目
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/index.xml">
+                    订阅
+                </a>
+                
+            
+            
+            <div class="toc">
+
+
+</div>
+            
+        </div>
+    </div>
+</div>
+<transition name="fade">
+    <div id="drawer-mask" v-bind:class="{ 'single-column-drawer-mask': mounted }" v-if="isDrawerOpen" v-on:click="toggleDrawer"></div>
+</transition>
+<nav id="navBar" class="navbar sticky-top navbar-light single-column-nav-container">
+    <div id="navBackground" class="nav-background"></div>
+    <div class="container container-narrow nav-content">
+        <button id="nav_dropdown_btn" class="nav-dropdown-toggle" type="button" v-on:click="toggleDrawer">
+            <i class="material-icons">
+                menu
+            </i>
+        </button>
+        <a id="navTitle" class="navbar-brand" href="https://blog.xxyws.top/">
+            学礼以立
+        </a>
+        
+        <button type="button" class="nav-darkmode-toggle" id="darkModeToggleButton2">
+            <i class="material-icons" id="darkModeToggleIcon2">
+                dark_mode
+            </i>
+        </button>
+        
+    </div>
+</nav>
+<div class="single-column-header-container" id="pageHead"
+     v-bind:style="{ transform: 'translateZ(0px) translateY('+.3*scrollY+'px)', opacity: 1-navOpacity }">
+    <a href="https://blog.xxyws.top/">
+        <div class="single-column-header-title">学礼以立</div>
+        
+
+    </a>
+</div>
+
+            <div id="content">
+                <div id="streamContainer" class="stream-container">
+
+    <div class="post-list-container post-list-container-shadow">
+        <div class="post">
+            
+            
+            
+
+            <div class="post-head-wrapper-text-only"
+                
+            >
+                <div class="post-title">
+                    下调高血压临界值
+                    
+                    <div class="post-meta">
+                        
+                        <time itemprop="datePublished">
+                            2022-11-16 08:00
+                        </time>
+                        
+
+                        
+                            <i class="material-icons" style="">folder</i>
+                                <a href="/categories/all">All</a>
+                                &nbsp;
+                        
+
+                        
+                            <i class="material-icons" style="">label</i>
+                            
+                                <a href="/tags/%E4%B8%AD%E5%9B%BD">中国</a>
+                                &nbsp;
+                            
+                                <a href="/tags/%E7%A4%BE%E4%BC%9A">社会</a>
+                                &nbsp;
+                            
+                        
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="post-body-wrapper">
+                
+                <div class="post-body" v-pre>
+                
+                    <p>　　中新经纬11月15日电 (王玉玲)“看到指南下调高血压临界值，本来还在临界，现在好了，1级高血压了。”有网友在社交平台评论称。</p>
+<p>　　近日，《中国高血压临床实践指南》(下称《指南》)发布，其中最引人关注的，就是将中国成人高血压的诊断界值由收缩压(即SBP)≥140mmHg和/或舒张压(即DBP)≥90mmHg(以下简称140/90mmHg)下调至收缩压≥130mmHg和/或舒张压≥80mmHg(以下简称130/80mmHg)。</p>
+<p>　　据《指南》，全国调查数据显示，中国18岁以上成年人血压处于130/80mmHg到140/90mmHg之间的人群占比达23.2%，预计总人数近2.43亿。这意味着以《指南》的判定标准，“一夜之间”将多出近2.43亿高血压病人。</p>
+<p>　　中新经纬注意到，根据2016年《公务员录用体检通用标准(试行)》第二条，其中对血压规定为收缩压90mmHg-140mmHg；舒张压60mmHg-90mmHg。那么，《指南》是否对新增人群考公产生影响？此外，他们需要药物治疗吗？对市场将有何影响？</p>
+<p>　　与2017年美国标准一致</p>
+<p>　　新版《指南》不仅下调了中国成人高血压的诊断界值，还将高血压分级简化为二分法：收缩压130~139mmHg或/和舒张压80~89mmHg为1级高血压；收缩压≥140mmHg或/和舒张压≥90mmHg为2级高血压。</p>
+<p>　　《指南》称，高血压的诊断标准在近年来不断发生变化，并逐渐前移。1977年提出160/95mmHg，1997年提出140/90mmHg，此后医学界便一直沿用该诊断标准。</p>
+<p>　　而130/80mmHg的诊断标准最早出现于美国。2017年，美国心脏病学会(ACC)/美国心脏协会(AHA)高血压指南将诊断标准降低到上述指标，并将高血压分为1级和2级，取消3级和单纯收缩期高血压概念，将高血压分级简单化。</p>
+<p>　　在美国将高血压诊断标准前移之后，彼时美国成年人高血压患病率从过去的31.9%上升至45.9%，患病人数由0.72亿上升至1.03亿，引起了很大的社会与学界争议。在此后的《2018年ESC/ESH动脉高血压管理指南》《2019年英国高血压管理指南》《2020年ISH全球高血压实践指南》等除美国外的主流诊断标准仍采用了140/90mmHg的指标。</p>
+<p>　　对于争议，中国医师协会彼时刊文称，专家组一致认为，高血压诊断标准是人为制定的，无论血压标准设定在多少，以上两类人群的CVD(心脑血管疾病)发病风险增高都是客观存在的。美国高血压新指南提出高血压诊断标准窗口前移的新观点，其目的是为了加强早期管理、进一步降低CVD发病风险，这是一项具有临床意义的重要举措。</p>
+<p>　　此次下调有何依据？</p>
+<p>　　就中国情况而言，在2017年美国指南后颁布的《中国高血压防治指南(2018年修订版)》《中国老年高血压管理指南2019》中，也仍然以140/90mmHg作为诊断标准。为何此次要下调标准？</p>
+<p>　　《指南》中写道，这主要基于观察性研究、临床试验和卫生经济学评估积累的证据。汇总了4项最新的前瞻性队列研究的荟萃分析结果显示，在18岁及以上成人中，SBP130~139mmHg和/或DBP80~89mmHg人群的心血管病发病和死亡的相对风险(编者注：群体暴露在一定风险下与未暴露在该风险下某事件的发生风险对比)升高30%~90%，心血管病的人群归因风险达8.6%~12.9%。</p>
+<p>　　中新经纬查阅公开资料发现，高血压不仅是中国患病人数最多的慢性非传染性疾病，也是导致城乡居民心血管疾病死亡的最重要的危险因素。据《健康中国行动(2019-2030年)》，2022年和2030年中国心、脑血管疾病死亡率需分别下降至209.7/10万及以下和190.7/10万及以下。《中国高血压健康管理规范(2019)》也强调初始预防和一级预防的理念。</p>
+<p>　　但一位不愿具名的流行病学专家也向中新经纬记者表示，诊断标准下调后或存在推广难题，可以合理考虑年龄段(区分青年和老年)的区别。</p>
+<p>　　该说法背后原因在于，中国的高血压控制率和美国仍有较大差距。据2017年美国指南，其成年人高血压的知晓率、治疗率和控制率分别为84.2%、77.9%和54.7%。而根据《中国心血管健康与疾病报告2021》，这三项指标分别为51.6%、45.8%和16.8%，与美国有较大差距。</p>
+<p>　　对于美国而言，在高知晓率和治疗率的基础上，高血压人群的进一步扩大后，通过早期积极的血压管理，或对于降低高血压所导致的靶器官损害和心脑血管疾病发生有一定帮助。</p>
+<p>　　但对于中国而言，在控制率相对较低的情况下，能否对新增人群进行有效的血压管理，仍具有一定难度。</p>
+<p>　　会影响考公吗？千亿药物市场或扩容</p>
+<p>　　中新经纬注意到，根据2016年《公务员录用体检通用标准(试行)》第二条，其中对血压规定为收缩压90mmHg-140mmHg；舒张压60mmHg-90mmHg。而在《指南》之下，是否对新增人群考公产生影响？</p>
+<p>　　中新经纬以考生身份向国家公务员局政策咨询电话致电，对方表示需要联系具体的单位问询。此后，记者向多地事业单位致电。吉林省委网络安全和信息化委员会办公室回应称，体检标准是否改变将由吉林省组织部统一管理，目前没有收到相关通知；广州市社会科学院表示，体检将按照有关文件进行，目前没有收到关于标准改变的通知，第二次引进急需专业人才刚启动报名，到时候会否有改变将根据政策执行；广东省梅州市教育局回应称，体检是否合规需要依据三甲医院体检后医生给出的诊断建议。</p>
+<p>　　根据头豹研究院数据，2013年-2019年中国原发性高血压市场规模平均年复合增长率达11.7%，未来，中国原发性高血压药物市场规模将继续膨胀，但增长幅度将减缓，在2020年至2026年将以9.1%的年复合增长率持续增长，至2026年市场规模预计将达到近1547.01亿元。对于新纳入高血压人群，如果需要药物干预的话，是否意味着市场将进一步扩容？该类人群是否需要进行药物干预？</p>
+<p>　　《指南》写道，从卫生经济学角度，根据最新国际指南推荐的降压药物治疗启动标准，在中国35岁及以上成人中，SBP130~139mmHg和/或DBP80~89mmHg的人群有22.7%需要进行降压药物治疗，预计总人数为3990万。而根据中国最新的药品价格和医疗保险制度，在中国35岁及以上血压位于该区间内且无心血管疾病的成人中，在未来10年乃至终生采取降压药物治疗均符合成本效益。但另一方面，《指南》也表示，该区间人群是否需要及何时启动降压药物治疗目前还缺乏强有力的循证医学证据。</p>
+<p>　　复旦大学公共卫生学院教授胡善联对中新经纬分析称，下调低高血压标准有利于早期发现早期预防I型患者转为2型(早期诊断标准)。当然全国会增加较多新病人，但“这些早期高危人群不需药物治疗，通过控盐、控脂、改善饮食习惯，早期预防各种心血管、脑卒中发生和发展，能达到成本节约的效果。在中国今后进行大规模人群前瞻性队列调查，取得结果来证实并提供中国经验。”胡善联说道。</p>
+<p>　　对此，《指南》建议， 推荐心血管危险分层为高危的患者立即启动降压药物治疗，包括如下3种情况：第一，大于140/90mmHg推荐立即启动降压药物治疗；第二，SBP130~139mmHg和/或DBP80~89mmHg伴临床合并症，推荐启动降压药物治疗；第三，SBP130~139mmHg和/或DBP80~89mmHg伴靶器官损害或≥3个心血管危险因素，可以启动降压药物治疗。</p>
+<p>　　由此可见，若《指南》得到进一步落实，抗高血压药物需求量或将有一定程度增加。据上述研报，总体情况来看，原发性高血压治疗药物市场集中度较高，外资/合资制药企业产品占据大部分市场份额，2019年中国抗高血压市场TOP10生产厂商的市场占有率为54%。中新经纬注意到，在外资占据原发性高血压市场竞争主体的当下，中国企业也在原发性高血压市场以仿制药或原研药形式争相布局。</p>
+<p>　　琥珀酸美托洛尔缓释片主要用于治疗高血压、心绞痛、以及伴有左心室收缩功能异常的症状稳定的慢性心力衰竭，其原研药厂商为阿斯利康。中新经纬从国家药监局查询发现，目前已有包括人福医药、东阳光药业、联亚药业、普洛康裕制药、德芮可制药等7家药企在2021年至2022年获得上市许可，开展销售竞速。</p>
+<p>　　除了琥珀酸美托洛尔缓释片，中国药企也在争相仿制武田制药公司所研发的血管紧张素II受体拮抗剂(ARB)类抗高血压药物阿齐沙坦片。9月20日，兆科药业的阿齐沙坦片获批上市，成为继北京百奥药业、恒瑞医药之后的第三家获批药企。</p>
+<p>　　除了仿制药外，中国药企也在布局改良新药及创新药。</p>
+<p>　　吉贝尓在2022年半年报中表示，其所生产的尼群洛尔片是中国首个一类复方抗高血压新药，用于治疗轻中度原发性高血压。吉贝尓表示，将加大市场与学术推广力度，扩大尼群洛尔片销售规模。</p>
+<p>　　11月4日，信立泰公告称，旗下ARB/CCB类复方制剂SAL0107获得上市许可，适用于阿利沙坦酯或氨氯地平单药治疗后血压控制不佳的原发性高血压患者。该产品上市后，将与公司已上市的血管紧张素II受体拮抗剂类降压药物信立坦(阿利沙坦酯片)形成战略协同。 (更多报道线索，请联系本文作者王玉玲：wangyuling@chinanews.com.cn)(中新经纬APP)</p>
+
+                    
+                    <HR width="100%" id="EOF">
+		    <p style="color:#777;">Last modified on 2022-11-16</p>
+                    
+                </div>
+            </div>
+            
+            
+            <nav class="post-pagination">
+
+                
+                <a class="newer-posts" href="https://blog.xxyws.top/posts/20221117gzpt/">
+			Next<br> 国资委上线监管企业产权信息查询平台 
+                </a>
+                
+                
+                
+                <a class="older-posts" href="https://blog.xxyws.top/posts/20221116ltj/">
+			Previous<br>不要被 零添加 轻易忽悠
+                </a>
+                
+            </nav>
+            <div class="post-comment-wrapper">
+                
+
+
+
+
+
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+
+
+                    </div>
+            </div><div id="single-column-footer">
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://risehere.net/">Rise</a>
+<br>
+Ported from <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	【署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0)】
+	
+</div>
+            </div>
+    
+    <script src="/js/journal.js"></script>
+    </body>
+</html>
